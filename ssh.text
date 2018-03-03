@@ -1,0 +1,35 @@
+Aimables-Air:myapp aimableniyogakiza$ ls -al ~/.ssh
+ls: /Users/aimableniyogakiza/.ssh: No such file or directory
+Aimables-Air:myapp aimableniyogakiza$ ssh-keygen -t rsa -b 4096 -C 'aimadev.soft@gmail.com'
+Generating public/private rsa key pair.
+Enter file in which to save the key (/Users/aimableniyogakiza/.ssh/id_rsa):
+Created directory '/Users/aimableniyogakiza/.ssh'.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /Users/aimableniyogakiza/.ssh/id_rsa.
+Your public key has been saved in /Users/aimableniyogakiza/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:rwO8AzhSy5g2l+/m5XcLKtAKwUFNUkKr1iKTqTjXtcw aimadev.soft@gmail.com
+The key's randomart image is:
++---[RSA 4096]----+
+|o=+o             |
+| .+.             |
+|...              |
+|.=o              |
+|*B.+o.. S        |
+|O=*=.=o. .       |
+|=.=.=.E+ ..      |
+| o . += oo..     |
+|    +o.+o....    |
++----[SHA256]-----+
+Aimables-Air:myapp aimableniyogakiza$ ls -al ~/.ssh
+total 16
+drwx------   4 aimableniyogakiza  staff   128 Mar  3 14:21 .
+drwxr-xr-x+ 74 aimableniyogakiza  staff  2368 Mar  3 14:21 ..
+-rw-------   1 aimableniyogakiza  staff  3243 Mar  3 14:21 id_rsa
+-rw-r--r--   1 aimableniyogakiza  staff   748 Mar  3 14:21 id_rsa.pub
+Aimables-Air:myapp aimableniyogakiza$ eval "$(ssh-agent -s)"
+Agent pid 65529
+Aimables-Air:myapp aimableniyogakiza$ ssh-add ~/.ssh/id_rsa
+Identity added: /Users/aimableniyogakiza/.ssh/id_rsa (/Users/aimableniyogakiza/.ssh/id_rsa)
+Aimables-Air:myapp aimableniyogakiza$
