@@ -33,3 +33,313 @@ Agent pid 65529
 Aimables-Air:myapp aimableniyogakiza$ ssh-add ~/.ssh/id_rsa
 Identity added: /Users/aimableniyogakiza/.ssh/id_rsa (/Users/aimableniyogakiza/.ssh/id_rsa)
 Aimables-Air:myapp aimableniyogakiza$
+
+================================Heroku===========================
+
+
+Aimables-Air:myapp aimableniyogakiza$ git push -u origin master
+Username for 'https://github.com': niyogakiza
+Password for 'https://niyogakiza@github.com':
+Counting objects: 19, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (16/16), done.
+Writing objects: 100% (19/19), 2.99 KiB | 1019.00 KiB/s, done.
+Total 19 (delta 0), reused 0 (delta 0)
+To https://github.com/niyogakiza/Web-server-application-deployment.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+Aimables-Air:myapp aimableniyogakiza$ heroku --help
+ ▸    Cannot read property 'concat' of undefined
+Usage: heroku COMMAND
+
+Help topics, type heroku help TOPIC for more details:
+
+ 2fa
+ access          manage user access to apps
+ addons          tools and services for developing, extending, and operating your app
+ apps            manage apps
+ auth            heroku authentication
+ authorizations  OAuth authorizations
+ buildpacks      manage the buildpacks for an app
+ certs           a topic for the ssl plugin
+ ci              run an application test suite on Heroku
+ clients         OAuth clients on the platform
+ config          manage app config vars
+ container       Use containers to build and deploy Heroku apps
+ domains         manage the domains for an app
+ drains          list all log drains
+ features        manage optional features
+ git             manage local git repository for app
+ keys            manage ssh keys
+ labs            experimental features
+ local           run heroku app locally
+ logs            display recent log output
+ maintenance     manage maintenance mode for an app
+ members         manage organization members
+ notifications   display notifications
+ orgs            manage organizations
+ outbound-rules
+ pg              manage postgresql databases
+ pipelines       manage collections of apps in pipelines
+ plugins         add/remove CLI plugins
+ ps              Client tools for Heroku Exec
+ redis           manage heroku redis instances
+ regions         list available regions
+ releases        manage app releases
+ run             run a one-off process inside a Heroku dyno
+ sessions        OAuth sessions
+ spaces          manage heroku private spaces
+ status          status of the Heroku platform
+ teams           manage teams
+ twofactor
+ webhooks        setup HTTP notifications of app activity
+
+Aimables-Air:myapp aimableniyogakiza$ heroku login
+Enter your Heroku credentials:
+Email: aimadev.soft@gmail.com
+Password: ***********
+Logged in as aimadev.soft@gmail.com
+Aimables-Air:myapp aimableniyogakiza$ heroku keys:add
+Found an SSH public key at /Users/aimableniyogakiza/.ssh/id_rsa.pub
+? Would you like to upload it to Heroku? Yes
+Uploading /Users/aimableniyogakiza/.ssh/id_rsa.pub SSH key... done
+Aimables-Air:myapp aimableniyogakiza$ ssh -v git@heroku.com
+OpenSSH_7.6p1, LibreSSL 2.6.2
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: /etc/ssh/ssh_config line 48: Applying options for *
+debug1: Connecting to heroku.com port 22.
+debug1: Connection established.
+debug1: identity file /Users/aimableniyogakiza/.ssh/id_rsa type 0
+debug1: key_load_public: No such file or directory
+debug1: identity file /Users/aimableniyogakiza/.ssh/id_rsa-cert type -1
+debug1: key_load_public: No such file or directory
+debug1: identity file /Users/aimableniyogakiza/.ssh/id_dsa type -1
+debug1: key_load_public: No such file or directory
+debug1: identity file /Users/aimableniyogakiza/.ssh/id_dsa-cert type -1
+debug1: key_load_public: No such file or directory
+debug1: identity file /Users/aimableniyogakiza/.ssh/id_ecdsa type -1
+debug1: key_load_public: No such file or directory
+debug1: identity file /Users/aimableniyogakiza/.ssh/id_ecdsa-cert type -1
+debug1: key_load_public: No such file or directory
+debug1: identity file /Users/aimableniyogakiza/.ssh/id_ed25519 type -1
+debug1: key_load_public: No such file or directory
+debug1: identity file /Users/aimableniyogakiza/.ssh/id_ed25519-cert type -1
+debug1: Local version string SSH-2.0-OpenSSH_7.6
+debug1: Remote protocol version 2.0, remote software version endosome
+debug1: no match: endosome
+debug1: Authenticating to heroku.com:22 as 'git'
+debug1: SSH2_MSG_KEXINIT sent
+debug1: SSH2_MSG_KEXINIT received
+debug1: kex: algorithm: curve25519-sha256@libssh.org
+debug1: kex: host key algorithm: ssh-rsa
+debug1: kex: server->client cipher: chacha20-poly1305@openssh.com MAC: <implicit> compression: none
+debug1: kex: client->server cipher: chacha20-poly1305@openssh.com MAC: <implicit> compression: none
+debug1: expecting SSH2_MSG_KEX_ECDH_REPLY
+debug1: Server host key: ssh-rsa SHA256:8tF0wX2WquK45aGKs/Bh1dKmBXH08vxUe0VCJJWOA/o
+The authenticity of host 'heroku.com (50.19.85.156)' can't be established.
+RSA key fingerprint is SHA256:8tF0wX2WquK45aGKs/Bh1dKmBXH08vxUe0VCJJWOA/o.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'heroku.com,50.19.85.156' (RSA) to the list of known hosts.
+debug1: rekey after 134217728 blocks
+debug1: SSH2_MSG_NEWKEYS sent
+debug1: expecting SSH2_MSG_NEWKEYS
+debug1: SSH2_MSG_NEWKEYS received
+debug1: rekey after 134217728 blocks
+debug1: SSH2_MSG_SERVICE_ACCEPT received
+debug1: Authentications that can continue: publickey
+debug1: Next authentication method: publickey
+debug1: Offering public key: RSA SHA256:rwO8AzhSy5g2l+/m5XcLKtAKwUFNUkKr1iKTqTjXtcw /Users/aimableniyogakiza/.ssh/id_rsa
+debug1: Server accepts key: pkalg ssh-rsa blen 535
+debug1: Authentication succeeded (publickey).
+Authenticated to heroku.com ([50.19.85.156]:22).
+debug1: channel 0: new [client-session]
+debug1: Entering interactive session.
+debug1: pledge: network
+debug1: Sending environment.
+debug1: Sending env LC_CTYPE = en_GB.UTF-8
+PTY allocation request failed on channel 0
+shell request failed on channel 0
+Aimables-Air:myapp aimableniyogakiza$ env
+SSH_AGENT_PID=65529
+TERM=xterm-256color
+SHELL=/bin/bash
+TMPDIR=/var/folders/lh/lppy0ffx0b57mgmdy1szxjg80000gn/T/
+Apple_PubSub_Socket_Render=/private/tmp/com.apple.launchd.wWzFk4J7f1/Render
+USER=aimableniyogakiza
+SSH_AUTH_SOCK=/var/folders/lh/lppy0ffx0b57mgmdy1szxjg80000gn/T//ssh-0Zykp9HkHtJJ/agent.65528
+__CF_USER_TEXT_ENCODING=0x1F5:0x0:0x2
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/usr/local/share/dotnet:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Wireshark.app/Contents/MacOS
+PWD=/Users/aimableniyogakiza/WebstormProjects/myapp
+XPC_FLAGS=0x0
+XPC_SERVICE_NAME=0
+SHLVL=1
+HOME=/Users/aimableniyogakiza
+LOGNAME=aimableniyogakiza
+LC_CTYPE=en_GB.UTF-8
+GOPATH=/Users/aimableniyogakiza
+_=/usr/bin/env
+Aimables-Air:myapp aimableniyogakiza$ node app.js
+Server is up on port 3000
+^C
+Aimables-Air:myapp aimableniyogakiza$ npm start
+
+> myapp@0.0.0 start /Users/aimableniyogakiza/WebstormProjects/myapp
+> node app.js
+
+Server is up on port 3000
+Sat Mar 03 2018 15:00:30 GMT+0000 (GMT): GET /
+Sat Mar 03 2018 15:00:33 GMT+0000 (GMT): GET /about
+Sat Mar 03 2018 15:00:34 GMT+0000 (GMT): GET /
+^CAimables-Air:myapp aimableniyogakiza$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   app.js
+        modified:   package.json
+        deleted:    views/error.jade
+        deleted:    views/index.jade
+        deleted:    views/layout.jade
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        .idea/jsLibraryMappings.xml
+        .idea/misc.xml
+        .idea/modules.xml
+        .idea/myapp.iml
+        .idea/runConfigurations/
+        .idea/watcherTasks.xml
+        .idea/workspace.xml
+        bin/
+        package-lock.json
+        public/stylesheets/
+        ssh.text
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Aimables-Air:myapp aimableniyogakiza$ git add .
+Aimables-Air:myapp aimableniyogakiza$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   .idea/jsLibraryMappings.xml
+        new file:   .idea/misc.xml
+        new file:   .idea/modules.xml
+        new file:   .idea/myapp.iml
+        new file:   .idea/runConfigurations/bin_www.xml
+        new file:   .idea/watcherTasks.xml
+        new file:   .idea/workspace.xml
+        modified:   app.js
+        new file:   bin/www
+        new file:   package-lock.json
+        modified:   package.json
+        new file:   public/stylesheets/style.css
+        new file:   ssh.text
+        deleted:    views/error.jade
+        deleted:    views/index.jade
+        deleted:    views/layout.jade
+
+Aimables-Air:myapp aimableniyogakiza$ git commit -m 'Setup start script and heroku port'
+[master d852441] Setup start script and heroku port
+ 16 files changed, 4245 insertions(+), 21 deletions(-)
+ create mode 100644 .idea/jsLibraryMappings.xml
+ create mode 100644 .idea/misc.xml
+ create mode 100644 .idea/modules.xml
+ create mode 100644 .idea/myapp.iml
+ create mode 100644 .idea/runConfigurations/bin_www.xml
+ create mode 100644 .idea/watcherTasks.xml
+ create mode 100644 .idea/workspace.xml
+ create mode 100755 bin/www
+ create mode 100644 package-lock.json
+ create mode 100644 public/stylesheets/style.css
+ create mode 100644 ssh.text
+ delete mode 100644 views/error.jade
+ delete mode 100644 views/index.jade
+ delete mode 100644 views/layout.jade
+Aimables-Air:myapp aimableniyogakiza$ git push
+Counting objects: 21, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (18/18), done.
+Writing objects: 100% (21/21), 30.63 KiB | 2.36 MiB/s, done.
+Total 21 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+To https://github.com/niyogakiza/Web-server-application-deployment.git
+   7e98acd..d852441  master -> master
+Aimables-Air:myapp aimableniyogakiza$ heroku create
+Creating app... done, ⬢ mighty-cove-38860
+https://mighty-cove-38860.herokuapp.com/ | https://git.heroku.com/mighty-cove-38860.git
+Aimables-Air:myapp aimableniyogakiza$ git push heroku
+Counting objects: 40, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (34/34), done.
+Writing objects: 100% (40/40), 33.51 KiB | 1.67 MiB/s, done.
+Total 40 (delta 3), reused 0 (delta 0)
+remote: Compressing source files... done.
+remote: Building source:
+remote:
+remote: -----> Node.js app detected
+remote:
+remote: -----> Creating runtime environment
+remote:
+remote:        NPM_CONFIG_LOGLEVEL=error
+remote:        NODE_VERBOSE=false
+remote:        NODE_ENV=production
+remote:        NODE_MODULES_CACHE=true
+remote:
+remote: -----> Installing binaries
+remote:        engines.node (package.json):  unspecified
+remote:        engines.npm (package.json):   unspecified (use default)
+remote:
+remote:        Resolving node version 8.x...
+remote:        Downloading and installing node 8.9.4...
+remote:        Using default npm version: 5.6.0
+remote:
+remote: -----> Restoring cache
+remote:        Skipping cache restore (not-found)
+remote:
+remote: -----> Building dependencies
+remote:        Installing node modules (package.json + package-lock)
+remote:
+remote:        > nodemon@1.17.1 postinstall /tmp/build_e7cde9b4dde5e0828424372143e5fe91/node_modules/nodemon
+remote:        > node -e "console.log('u001b[32mLove nodemon? You can now support the project via the open collective:u001b[22mu001b[39mn > u001b[96mu001b[1mhttps://opencollective.com/nodemon/donateu001b[0mn')" || exit 0
+remote:
+remote:        Love nodemon? You can now support the project via the open collective:
+remote:        > https://opencollective.com/nodemon/donate
+remote:
+remote:        added 357 packages in 7.038s
+remote:
+remote: -----> Caching build
+remote:        Clearing previous node cache
+remote:        Saving 2 cacheDirectories (default):
+remote:        - node_modules
+remote:        - bower_components (nothing to cache)
+remote:
+remote: -----> Pruning devDependencies
+remote:        Skipping because npm 5.6.0 sometimes fails when running 'npm prune' due to a known issue
+remote:        https://github.com/npm/npm/issues/19356
+remote:
+remote:        You can silence this warning by updating to at least npm 5.7.1 in your package.json
+remote:        https://devcenter.heroku.com/articles/nodejs-support#specifying-an-npm-version
+remote:
+remote: -----> Build succeeded!
+remote: -----> Discovering process types
+remote:        Procfile declares types     -> (none)
+remote:        Default types for buildpack -> web
+remote:
+remote: -----> Compressing...
+remote:        Done: 20.6M
+remote: -----> Launching...
+remote:        Released v3
+remote:        https://mighty-cove-38860.herokuapp.com/ deployed to Heroku
+remote:
+remote: Verifying deploy... done.
+To https://git.heroku.com/mighty-cove-38860.git
+ * [new branch]      master -> master
+Aimables-Air:myapp aimableniyogakiza$ heroku open
+Aimables-Air:myapp aimableniyogakiza$
